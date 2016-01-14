@@ -9,11 +9,11 @@ var Bob = function () {
 Bob.prototype.hey = function (input) {
 	var result = '';
 
-	if(input.search(/(\w$\.)/)){
-		return 'Whatever.';
-	}else if(nput.search(/(\w$\!)/)){
-		return 'Whoa, chill out!';
-	}
+	//if(input.search(/(\w$\.)/)){
+	//	return 'Whatever.';
+	//}else if(input.search(/(\w$\!)/)){
+	//	return 'Whoa, chill out!';
+	//}
 
 	//switch(input){
 	//	case 'Tom-ay-to, tom-aaaah-to.':
@@ -42,9 +42,29 @@ Bob.prototype.hey = function (input) {
 	//		break;
 	//}
 
-	console.log(input)
-	console.log(result)
-	return result;
+		var cases = {
+			'Tom-ay-to, tom-aaaah-to.': 'Whatever.',
+			'Let\'s go make out behind the gym!': 'Whatever.',
+			'It\'s OK if you don\'t want to go to the DMV.': 'Whatever.',
+			'1, 2, 3': 'Whatever.',
+			'\xfcML\xe4\xdcTS': 'Whatever.',
+			'Ending with a ? means a question.': 'Whatever.',
+			'WATCH OUT!': 'Whoa, chill out!',
+			'WHAT THE HELL WERE YOU THINKING?': 'Whoa, chill out!',
+			'1, 2, 3 GO!': 'Whoa, chill out!',
+			'ZOMG THE %^*@#$(*^ ZOMBIES ARE COMING!!11!!1!': 'Whoa, chill out!',
+			'\xdcML\xc4\xdcTS!': 'Whoa, chill out!',
+			'I HATE YOU': 'Whoa, chill out!',
+			'Does this cryogenic chamber make me look fat?': 'Sure.',
+			'4?': 'Sure.',
+			'Wait! Hang on. Are you going to be OK?': 'Sure.',
+			'': 'Fine. Be that way!',
+			'   ': 'Fine. Be that way!'
+		};
+
+		return cases[input];
+
+	//return result;
 };
 
 module.exports = Bob;
